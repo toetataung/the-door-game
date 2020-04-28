@@ -69,10 +69,10 @@ void gameOver(){
         cout << "\n\nYou Had Been Killed at Door Number : " <<level<<"\n\n"<<"Password is "<< password;
     }
 }
+
 int main()
 {
     passwordMaker();
-
     welcome();
     for (int a= life; a>=1;) {
         cout << "\n\n";
@@ -80,7 +80,4 @@ int main()
         check();
         a = life;
     }
-
-
-
 }

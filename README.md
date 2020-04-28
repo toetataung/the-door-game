@@ -3,8 +3,11 @@ Are u escape from me ? The Door had been locked !
 
 
 levelUp(); 
+
 life(); 
+
 gameOver();
+
 highScore();
 
 How far can you go?

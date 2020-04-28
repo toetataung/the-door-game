@@ -48,7 +48,7 @@ void levelUp(){
 
 void welcome(){
     if (level==1) {
-    cout << "The Door V.1 (Developed By Toe Tat Aung)";
+    cout << "The Door V.1 (By Toe Tat Aung)";
     cout << "\nAre u escape from me ? The Door had been locked";
     cout << "\nPassword is Between form 1 - 10, You have 4 chance";
     cout << "\nDo or Die? \n";

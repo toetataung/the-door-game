@@ -1,6 +1,8 @@
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <fstream >
+#include <string>
 using namespace std;
 
 int userInput;
@@ -8,10 +10,13 @@ int password;
 int levelBlock =10;
 int life = 4;
 int level = 1;
+string myName;
+std::string myScore;
 void levelUp();
 void welcome();
 void welcome2();
 void gameOver();
+void highScoreUpdate();
 
 void passwordMaker() {
     srand(time(0));
@@ -48,7 +53,8 @@ void levelUp(){
 
 void welcome(){
     if (level==1) {
-    cout << "The Door V.1 (By Toe Tat Aung)";
+    cout << "The Door V.1 (C By Toe Tat Aung)";
+    cout << "\n\nHigh Score Player : "<<myName<< "| Door No : " << myScore << "\n";
     cout << "\nAre u escape from me ? The Door had been locked";
     cout << "\nPassword is Between form 1 - 10, You have 4 chance";
     cout << "\nDo or Die? \n";
@@ -67,12 +73,37 @@ void welcome2(){
 void gameOver(){
     if (life == 0) {
         cout << "\n\nYou Had Been Killed at Door Number : " <<level<<"\n\n"<<"Password is "<< password;
+        if (level>=std::stoi(myScore)){
+        cout << "\n\nCongratulation !, You are highest Score player in game. So , We'll update Champion with You, \n\nPlease Enter Your Name :";
+        highScoreUpdate();
     }
+    }
+
+}
+
+
+void highScoreUpdate(){
+    string inputName;
+    cin >> inputName;
+	ofstream fout;
+	fout.open("player.txt");
+    fout<<inputName;
+	fout.close();
+
+	fout.open("score.txt");
+    fout<<level;
+	fout.close();
 }
 
 int main()
 {
+    ifstream MyReadFile("player.txt");
+    getline (MyReadFile, myName);
+    ifstream MyScoreFile("score.txt");
+    getline (MyScoreFile, myScore);
+
     passwordMaker();
+
     welcome();
     for (int a= life; a>=1;) {
         cout << "\n\n";

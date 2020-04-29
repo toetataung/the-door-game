@@ -28,16 +28,13 @@ void check() {
     if (userInput>password) {
     life -= 1;
     cout << "\nYour Number is Greater Than Password. Your chances left : " <<life ;
-
-
-    gameOver();
+    gameOver();	    
     } else if (userInput<password){
     life -= 1;
     cout << "\nYour Number is Lower Than Password. Your chances left : " <<life;
-    gameOver();
+    gameOver();	    
     } else if (userInput==password){
     levelUp();
-
     }
 }
 
@@ -61,6 +58,7 @@ void welcome(){
     cout << "\nEnter Your Number : ";
     }
 }
+
 void welcome2(){
     cout << "\nPassword is correct, Access Granted!";
     cout << "\n\nCongratulation !! You will get +3 chances";
@@ -77,10 +75,8 @@ void gameOver(){
         cout << "\n\nCongratulation !, You are highest Score player in game. So , We'll update Champion with You, \n\nPlease Enter Your Name :";
         highScoreUpdate();
     }
-    }
-
+    	}
 }
-
 
 void highScoreUpdate(){
     string inputName;
